@@ -1,0 +1,14 @@
+node_modules
+dist
+dist-ssr
+.vite
+.env
+.env.*
+!.env.example
+*.local
+.DS_Store
+.git
+.gitignore
+tsconfig.tsbuildinfo
+README.md
+nginx

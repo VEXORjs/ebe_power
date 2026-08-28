@@ -16,6 +16,20 @@ npm run build    # produkcyjny build do katalogu dist/
 npm run preview  # podgląd zbudowanej wersji
 ```
 
+## Wdrożenie na Cloud Run
+
+Repozytorium zawiera `Dockerfile` (nginx + statyczne pliki z `dist/`) oraz
+skrypt `start` (Vite preview) — oba nasłuchują na porcie z zmiennej `PORT`
+(Cloud Run ustawia `PORT=8080`).
+
+```bash
+gcloud run deploy wizytowka --source . --region europe-central2 \
+  --allow-unauthenticated
+```
+
+albo przez Cloud Build trigger na tym repozytorium (wykryje `Dockerfile`
+automatycznie). Za pierwszym razem wybierz region i potwierdź utworzenie usługi.
+
 ## Struktura
 
 ```
